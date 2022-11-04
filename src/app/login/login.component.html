@@ -1,0 +1,18 @@
+
+<div style="width:100%; margin-top:30px; display:flex; flex-direction:column; justify-content: center; align-items: center;">
+    <button mat-raised-button style="margin-bottom:40px; padding:10px; background-color:blue; color:white;" (click)="this.router.navigate(['/home'])">POVRATAK NA IZBORNIK RANJIVOSTI</button>
+    <h1 style="margin-bottom:30px;">BROKEN ACCESS CONTROL - <span>{{bacRanjivost ? 'OMOGUĆENA RANJIVOST' : 'ONEMOGUĆENA RANJIVOST'}}</span></h1>
+<form #f="ngForm" (ngSubmit)="login()" style="display:flex; flex-direction:column; align-items:center; width:200px; height:300px; padding:40px 100px 60px 100px; background-color: #f1f1f1; border-radius:15px;">
+    <h2 style="text-align:center;">LOGIN</h2>
+    <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput name="email" type="text" class="form-control" required [(ngModel)]="email">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput name="password" type="password" class="form-control" required [(ngModel)]="password">
+    </mat-form-field>
+    <button mat-raised-button [disabled]="!f.valid" type="submit" class="button">LOGIN</button>
+    <mat-error *ngIf="!loggedIn && loginAttempt" style="text-align:center; margin-top:15px;">Email or password incorrect</mat-error>
+</form>
+</div>

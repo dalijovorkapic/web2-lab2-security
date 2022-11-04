@@ -1,0 +1,22 @@
+<div style="width:100%; display:flex; flex-direction:column; align-items:center;">
+    <div style="background-color:lightblue; padding-top:30px; padding-bottom:10px; width:100%; display:flex; flex-direction:column; align-items:center;">
+        <h1>WEB2-LAB2-SECURITY</h1>
+        <h2 style="font-weight:bold;">DVIJE RANJIVOSTI WEB-APLIKACIJE</h2>
+    </div>
+    <div style="width:30%; background-color:#f1f1f1; height:160px; display:flex; padding-top:15px; flex-direction:column; align-items:center; margin-bottom:30px; margin-top:30px;">
+        <h2>CROSS SITE SCRIPTING (XSS)</h2>
+        <mat-radio-group [(ngModel)]="xssRanjivost">
+            <mat-radio-button value="omoguci" style="margin-right:10px;">OMOGUĆI RANJIVOST</mat-radio-button>
+            <mat-radio-button value="onemoguci" style="margin-left:10px;">ONEMOGUĆI RANJIVOST</mat-radio-button>
+        </mat-radio-group>
+        <button mat-raised-button style="margin-top:30px;" class="button" (click)="demonstracija('xss')">DEMONSTRACIJA</button>
+    </div>
+    <div style="width:30%; background-color:#f1f1f1; height:160px; display:flex; flex-direction:column; align-items:center; padding-top:15px;">
+        <h2>BROKEN ACCESS CONTROL</h2>
+        <mat-radio-group [(ngModel)]="bacRanjivost">
+            <mat-radio-button value="omoguci" style="margin-right:10px;">OMOGUĆI RANJIVOST</mat-radio-button>
+            <mat-radio-button value="onemoguci" style="margin-left:10px;">ONEMOGUĆI RANJIVOST</mat-radio-button>
+        </mat-radio-group>
+        <button mat-raised-button style="margin-top:30px;" class="button" (click)="demonstracija('bac')">DEMONSTRACIJA</button>
+    </div>
+</div>

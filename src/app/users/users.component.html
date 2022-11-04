@@ -1,0 +1,26 @@
+
+<div style="width:100%; display:flex; flex-direction: column; align-items:center;">
+    <div style="background-color:lightblue; padding-top:30px; padding-bottom:10px; width:100%; display:flex; flex-direction:column; align-items:center;">
+        <h1 style="text-align:center; width:100%; font-size:32px;">WELCOME BACK <span style="font-weight:bold; font-size:32px;">{{user.username.toUpperCase()}} !</span></h1>
+        <button mat-raised-button class="button" (click)="logout()">LOGOUT</button>
+    </div>
+    <div style="width:40%; display:flex; flex-direction: column; align-items:center; background-color:#f1f1f1; margin-top:20px;">
+        <h1 style="text-align:center; margin-top:20px; margin-bottom:60px;">THIS IS YOUR USER INFO</h1>
+        <h2 style="width:30%;">Email: {{user.email}}</h2>
+        <h2 style="width:30%;">Password: *****</h2>
+        <h2 style="width:30%;">Role: <span style="font-weight:bold;">{{user.role}}</span></h2>
+    </div>
+
+    <div style="width:40%; display:flex; flex-direction: column; align-items:center; background-color:#f5f5ef; margin-top:30px;">
+        <h1 style="text-align:center; margin-top:20px; margin-bottom:60px;">ADMINISTRATOR PANEL</h1>
+        <div *ngIf="!isAdministrator" style="height:100px;">
+            <h2 style="color:red; font-weight:bold; width:100%; text-align:center;">ACCESS DENIED !</h2>
+            <h2 style="color:red;">Your role is <span style="font-weight:bold;">{{user.role}}</span> and you do not have access to this panel.</h2>
+        </div>
+        <div *ngIf="isAdministrator" style="display:flex; flex-direction:column; align-items:center; width:60%; padding-bottom:30px;">
+            <button mat-raised-button class="button" style="width:100%; margin-bottom:15px; padding:10px 10px 10px 10px;">MANAGE USERS</button>
+            <button mat-raised-button class="button" style="width:100%; margin-bottom:15px; padding:10px 10px 10px 10px;">CHANGE WEBSITE CONFIGURATION</button>
+            <button mat-raised-button class="button" style="width:100%; margin-bottom:15px; padding:10px 10px 10px 10px;">SECURITY SETTINGS</button>
+        </div>
+    </div>
+</div>
