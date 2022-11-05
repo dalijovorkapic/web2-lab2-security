@@ -1,7 +1,7 @@
 <div style="width:100%; margin-top:20px; display:flex; flex-direction:column; justify-content: center; align-items: center;">
     <button mat-raised-button style="margin-bottom:40px; padding:10px; background-color:blue; color:white;" (click)="this.router.navigate(['/home'])">POVRATAK NA IZBORNIK RANJIVOSTI</button>
     <h1 style="margin-bottom:30px;">BROKEN ACCESS CONTROL - <span>{{bacRanjivost ? 'OMOGUĆENA RANJIVOST' : 'ONEMOGUĆENA RANJIVOST'}}</span></h1>
-    <h2 style="width:50%; text-align:center;">Ako je omogućena ranjivost, nakon uspješne prijave, mjenjanjem user_id parametra u URL-u se može pristupiti administratorskim ovlastima i podacima od drugih korisnika (npr. /users?user_id=3)</h2>
+    <h2 style="width:50%; text-align:center;">Ako je omogućena ranjivost, nakon uspješne prijave, mjenjanjem user_id parametra u URL-u, obični korisnik može pristupiti administratorskim ovlastima i podacima od drugih korisnika (npr. /users?user_id=3)</h2>
     <h2 style="width:50%; text-align:center;">Ako ranjivost nije omogućena, nakon uspješne prijave, korisnički ID se ne prenosi URL-om i onemogućena je ručna promjena URL-a, čime je aplikacija zaštićena od Broken Access Control napada.</h2>
 <form #f="ngForm" (ngSubmit)="login()" style="display:flex; flex-direction:column; align-items:center; width:200px; height:300px; padding:40px 100px 60px 100px; background-color: #f1f1f1; border-radius:15px;">
     <h2 style="text-align:center;">LOGIN</h2>

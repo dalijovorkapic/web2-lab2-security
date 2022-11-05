@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
     var auth1 = JSON.parse(localStorage.getItem('auth1') || 'false');
     if(!isAuthenticated && !auth1) {
       localStorage.removeItem('user');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/home']);
     }
     return (isAuthenticated || auth1);
   }
