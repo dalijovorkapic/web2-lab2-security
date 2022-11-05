@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   demonstracija(ranjivost:string) {
     if(ranjivost=='xss') {
       this.authService.xssRanjivost = this.xssRanjivost == 'omoguci' ? true: false;
+      this.router.navigate(['/notes']);
     }
     else {
       this.authService.bacRanjivost = this.bacRanjivost == 'omoguci' ? true: false;

@@ -8,6 +8,7 @@ import { MaterialModule } from 'src/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
+import { NotesComponent } from './notes/notes.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { UsersComponent } from './users/users.component';
     LoginComponent,
     HomeComponent,
     UsersComponent,
+    NotesComponent,
   ],
   imports: [
     BrowserModule,

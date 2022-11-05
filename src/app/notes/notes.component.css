@@ -1,0 +1,38 @@
+.letter-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top:20px;
+    background-color: #fff3e6;
+    padding:30px;
+    border-radius: 30px;
+}
+
+.letter-container-note {
+    min-width:150px;
+    min-height:100px;
+    border-radius: 40px;
+    padding:10px;
+    background-color: #fff3e6;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-self:center;
+}
+
+.button:hover {
+    background-color:#e0d5ca;
+}
+
+.letters-grid {
+    margin-top:40px;
+    display: grid;
+    grid-column: full-start/full-end;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-items: center;
+    grid-gap: 15px;
+
+}

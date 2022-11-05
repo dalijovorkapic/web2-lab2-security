@@ -31,7 +31,7 @@ export class UsersComponent implements OnInit {
     this.authService.isAuthenticated=false;
     localStorage.removeItem('user');
     localStorage.removeItem('auth1');
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
   }
 
 }

@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           this.loggedIn = false;
           this.email = "";
           this.password = "";
-          this.router.navigate(['/login']);
+          this.router.navigate(['/home']);
         }
       })
       this.authService.authenticateUser1(this.email, this.password);
@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           this.loggedIn = false;
           this.email = "";
           this.password = "";
-          this.router.navigate(['/login']);
+          this.router.navigate(['/home']);
         }
       })
       this.authService.authenticateUser2(this.email, this.password);

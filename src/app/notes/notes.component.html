@@ -1,0 +1,23 @@
+<div style="width:100%; margin-top:30px; display:flex; flex-direction:column; justify-content: center; align-items: center;">
+    <button mat-raised-button style="margin-bottom:40px; padding:10px; background-color:blue; color:white;" (click)="this.router.navigate(['/home'])">POVRATAK NA IZBORNIK RANJIVOSTI</button>
+    <h1 style="margin-bottom:30px;">CROSS SITE SCRIPTING (XSS) - <span>{{xssRanjivost ? 'OMOGUĆENA RANJIVOST' : 'ONEMOGUĆENA RANJIVOST'}}</span></h1>
+    <h2>PRIMJER: javascript:alert("You just got hacked !")</h2>
+
+    <div style="width:50%; margin-top:50px; display:flex; flex-direction:column; align-items: center; background-color:#ffe6e6; padding:20px; border-radius:20px;">
+        <h2 style="text-align:center;">HIDDEN FUNNY ANIMAL PICTURES TO LIGHTEN UP YOUR DAY!</h2>
+        <div style="width:60%; height:1px; background-color:white;"></div>
+        <div class="letter-container">
+            <h3>PUBLISH YOUR GOOFY ANIMAL PICTURE</h3>
+            <mat-form-field appearance="outline" style="width:80%;">
+                <mat-label>Your Image URL:</mat-label>
+                <textarea matInput name="note" type="text" class="form-control" [(ngModel)]="note"></textarea>
+            </mat-form-field>
+            <button mat-raised-button class="button" (click)="submitNote()" [disabled]="note==''">SUBMIT</button>
+        </div>
+        <div class="letters-grid">
+            <div class="letter-container-note" *ngFor="let image of (xssRanjivost ? safeImageUrls : imageUrls)">
+                <a [href]="image"><button mat-raised-button class="button">SHOW IMAGE</button></a>
+            </div>
+        </div>
+    </div>
+</div>
