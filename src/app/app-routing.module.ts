@@ -10,7 +10,7 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'home', component: HomeComponent},
   {path:'users', canActivate: [AuthGuard], component: UsersComponent},
-  {path:'notes', component: NotesComponent},
+  {path:'images', component: NotesComponent},
   {path:'',redirectTo:'/home', pathMatch: 'full'}
 ];
 

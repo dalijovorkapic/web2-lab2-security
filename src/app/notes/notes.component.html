@@ -2,12 +2,19 @@
     <button mat-raised-button style="margin-bottom:40px; padding:10px; background-color:blue; color:white;" (click)="this.router.navigate(['/home'])">POVRATAK NA IZBORNIK RANJIVOSTI</button>
     <h1 style="margin-bottom:30px;">CROSS SITE SCRIPTING (XSS) - <span>{{xssRanjivost ? 'OMOGUĆENA RANJIVOST' : 'ONEMOGUĆENA RANJIVOST'}}</span></h1>
     <h2>PRIMJER: javascript:alert("You just got hacked !")</h2>
+    <h2 style="width:50%; text-align:center;">
+        Ako je ranjivost <span style="font-weight:bold;">onemogućena</span>, unos korisnika je sanitiziran od strane samog frameworka, u ovom slučaju Angulara, i ta sanitizacija je vidljiva kao warning u browser konzoli pri submitanju unosa.
+        Ako se sa linkom SHOW IMAGE pokuša pristupiti takvom nesigurnom URL-u, Angular framework baca Failed to launch error u konzoli.
+    </h2>
+    <h2 style="width:50%; text-align:center;">
+        Ako je ranjivost <span style="font-weight:bold;">omogućena</span> to znači da je postavljeno klasično JavaScript polje za unos, bez sanitizacija od strane Angular frameworka te se u tom slučaju pri submitanju unosa ne javljaju nikakva upozoranje ni errori u konzoli, te isto tako se sa SHOW IMAGE pokreće napad bez ikakvih zabrana.
+    </h2>
 
     <div style="width:50%; margin-top:50px; display:flex; flex-direction:column; align-items: center; background-color:#ffe6e6; padding:20px; border-radius:20px;">
         <h2 style="text-align:center;">HIDDEN FUNNY ANIMAL PICTURES TO LIGHTEN UP YOUR DAY!</h2>
         <div style="width:60%; height:1px; background-color:white;"></div>
         <div class="letter-container">
-            <h3>PUBLISH YOUR GOOFY ANIMAL PICTURE</h3>
+            <h3>PUBLISH YOUR GOOFY ANIMAL PICTURE FOR SOMEONE TO OPEN !</h3>
             <mat-form-field appearance="outline" style="width:80%;">
                 <mat-label>Your Image URL:</mat-label>
                 <textarea matInput name="note" type="text" class="form-control" [(ngModel)]="note"></textarea>
